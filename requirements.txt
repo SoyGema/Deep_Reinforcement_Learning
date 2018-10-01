@@ -6,3 +6,4 @@ Keras-Preprocessing
 keras-rl
 gym
 tensorflow
+matplotlib
