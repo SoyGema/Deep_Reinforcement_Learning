@@ -1,7 +1,8 @@
-numpy==1.14.0
-Keras==2.2.2
-Keras-Applications==1.0.4
-keras-contrib==2.0.8
-Keras-Preprocessing==1.0.2
-keras-rl==0.4.2
+numpy
+Keras
+Keras-Applications
+keras-contrib
+Keras-Preprocessing
+keras-rl
 gym
+tensorflow
