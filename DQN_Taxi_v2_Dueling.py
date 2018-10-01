@@ -34,7 +34,7 @@ policy = LinearAnnealedPolicy(EpsGreedyQPolicy(), attr='eps', value_max=1., valu
 
 memory = SequentialMemory(limit=1000000, window_length=1)
 dqn2 = DQNAgent(model=model, nb_actions=nb_actions, memory=memory, nb_steps_warmup=50,
-              target_model_update=1e-2, policy=policy, enable_double_dqn=False, enable_dueling_network=True)
+              target_model_update=1e-2, policy=policy, enable_double_dqn=True, enable_dueling_network=True)
 dqn2.compile(Adam(lr=1e-3), metrics=['mae', 'acc'])
 
 import os.path
