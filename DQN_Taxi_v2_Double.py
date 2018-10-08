@@ -32,7 +32,7 @@ model.add(Dense(6, activation='linear'))
 policy = LinearAnnealedPolicy(EpsGreedyQPolicy(), attr='eps', value_max=1., value_min=-1, value_test=.05,
                               nb_steps=1000000)
 
-memory = SequentialMemory(limit=1000000, window_length=1)
+memory = SequentialMemory(limit=10000000, window_length=1)
 dqn2 = DQNAgent(model=model, nb_actions=nb_actions, memory=memory, nb_steps_warmup=50,
               target_model_update=1e-2, policy=policy, enable_double_dqn=True, enable_dueling_network=False)
 dqn2.compile(Adam(lr=1e-3), metrics=['mae', 'acc'])
@@ -53,5 +53,5 @@ class Saver(Callback):
 
 logs = FileLogger('Double_DQN_Taxi.csv', interval = 1)
 s = Saver()
-dqn2.fit(env, nb_steps=20,callbacks=[s,logs], visualize=False, verbose=2)
+dqn2.fit(env, nb_steps=2e8,callbacks=[s,logs], visualize=False, verbose=2)
 #dqn2.test(env, nb_episodes=10, visualize=True)
