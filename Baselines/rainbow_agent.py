@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-Code by @unixpickle for Sonic, reboot for Asteroids
+## Code by @unixpickle for Sonic, reboot for Asteroids
 
 
 
