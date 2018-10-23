@@ -16,7 +16,7 @@ from anyrl.envs.wrappers import BatchedFrameStack
 from anyrl.models import rainbow_models
 from anyrl.rollouts import BatchedPlayer, PrioritizedReplayBuffer, NStepPlayer
 from anyrl.spaces import gym_space_vectorizer
-import gym_remote.exceptions as gre
+import gym 
 
 ## from sonic_util import AllowBacktracking, make_env
 
@@ -45,7 +45,5 @@ def main():
                   min_buffer_size=20000)
 
 if __name__ == '__main__':
-    try:
-        main()
-    except gre.GymRemoteError as exc:
-        print('exception', exc)
+    main()
+
